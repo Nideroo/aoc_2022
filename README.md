@@ -1,2 +1,3 @@
-# aoc_2022
-Advent of Code 2022 in Python
+# Nideroo's Advent of Code 2022
+My Advent of Code 2022 in Python.
+- 1/12:
