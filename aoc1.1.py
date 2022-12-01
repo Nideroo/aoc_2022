@@ -40,11 +40,19 @@ In case the Elves get hungry and need extra snacks, they need to know which Elf 
 Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?
 """
 
+
 def main():
-    with open("aoc1.1_input.txt") as input:
-        lines = (line.rstrip() for line in input)
-
-
+    calories_per_elves = {}
+    with open("aoc1.1_input.txt") as input_file:
+        i = 1  # Track elf number
+        for line in input_file:
+            line = line.strip()
+            if line:
+                calories_per_elves[i] = int(line)  # Stripped line is a string representing number of calories
+            else:  # Blank line denotes end of current elf's inventory
+                i += 1
+    elf_max_calories = max(calories_per_elves, key=calories_per_elves.get)
+    print(f"Elf number {elf_max_calories} has the most food, totaling {calories_per_elves[elf_max_calories]} calories.")
 
 
 if __name__ == "__main__":
