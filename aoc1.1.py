@@ -48,7 +48,10 @@ def main():
         for line in input_file:
             line = line.strip()
             if line:
-                calories_per_elves[i] = int(line)  # Stripped line is a string representing number of calories
+                if calories_per_elves.get(i):  # Add to entry for this elf
+                    calories_per_elves[i] += int(line)  # Stripped line is a string representing number of calories
+                else:
+                    calories_per_elves[i] = int(line) # Make a new entry for this elf
             else:  # Blank line denotes end of current elf's inventory
                 i += 1
     elf_max_calories = max(calories_per_elves, key=calories_per_elves.get)
