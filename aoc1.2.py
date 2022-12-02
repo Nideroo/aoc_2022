@@ -13,7 +13,7 @@ Find the top three Elves carrying the most Calories. How many Calories are those
 
 def main():
     calories_per_elf = {}
-    with open("aoc1.1_input.txt") as input_file:
+    with open("aoc1_input.txt") as input_file:
         i = 1  # Track elf number
         for line in input_file:
             line = line.strip()
